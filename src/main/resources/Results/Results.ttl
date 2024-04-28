@@ -1,0 +1,57 @@
+@prefix : <http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph#> .
+
+:Arts__Humanities a :Subject .
+
+:Harvard_University-Arts__Humanities a :Uni_Sub;
+  :subject :Arts__Humanities;
+  :uniSubRank "1";
+  :uniSubScore "97.9"^^<http://www.w3.org/2001/XMLSchema#float>;
+  :university :Harvard_University .
+
+:Massachusetts_Institute_of_Technology_MIT_-Arts__Humanities a :Uni_Sub;
+  :subject :Arts__Humanities;
+  :uniSubRank "7";
+  :uniSubScore "89.7"^^<http://www.w3.org/2001/XMLSchema#float>;
+  :university :Massachusetts_Institute_of_Technology_MIT_ .
+
+:New_York_University_NYU-Arts__Humanities a :Uni_Sub;
+  :subject :Arts__Humanities;
+  :uniSubRank "=8";
+  :uniSubScore "89.6"^^<http://www.w3.org/2001/XMLSchema#float>;
+  :university :New_York_University_NYU .
+
+:Stanford_University-Arts__Humanities a :Uni_Sub;
+  :subject :Arts__Humanities;
+  :uniSubRank "4";
+  :uniSubScore "93.7"^^<http://www.w3.org/2001/XMLSchema#float>;
+  :university :Stanford_University .
+
+:University_of_California_Berkeley_UCB-Arts__Humanities a :Uni_Sub;
+  :subject :Arts__Humanities;
+  :uniSubRank "5";
+  :uniSubScore "92.1"^^<http://www.w3.org/2001/XMLSchema#float>;
+  :university :University_of_California_Berkeley_UCB .
+
+:University_of_California_Los_Angeles_UCLA-Arts__Humanities a :Uni_Sub;
+  :subject :Arts__Humanities;
+  :uniSubRank "=8";
+  :uniSubScore "89.6"^^<http://www.w3.org/2001/XMLSchema#float>;
+  :university :University_of_California_Los_Angeles_UCLA .
+
+:University_of_Cambridge-Arts__Humanities a :Uni_Sub;
+  :subject :Arts__Humanities;
+  :uniSubRank "2";
+  :uniSubScore "96.9"^^<http://www.w3.org/2001/XMLSchema#float>;
+  :university :University_of_Cambridge .
+
+:University_of_Oxford-Arts__Humanities a :Uni_Sub;
+  :subject :Arts__Humanities;
+  :uniSubRank "3";
+  :uniSubScore "96.8"^^<http://www.w3.org/2001/XMLSchema#float>;
+  :university :University_of_Oxford .
+
+:Yale_University-Arts__Humanities a :Uni_Sub;
+  :subject :Arts__Humanities;
+  :uniSubRank "6";
+  :uniSubScore "90.2"^^<http://www.w3.org/2001/XMLSchema#float>;
+  :university :Yale_University .

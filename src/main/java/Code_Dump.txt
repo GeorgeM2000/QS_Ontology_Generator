@@ -1,0 +1,127 @@
+It has been observed that there are many rows with missing values for the '2024', 'Institution', 'Location', and 'Score' columns. This happens only when the DataFrame is stored as xlsx. Remove those rows.
+
+
+wur_subject = pd.read_excel("QS 2024 WUR by Subject.xlsx")
+
+print(wur_subject[wur_subject['Subject'].notna() & wur_subject.drop(columns='Subject').isna().all(axis=1)])
+
+wur_subject = wur_subject.drop(wur_subject[wur_subject['Subject'].notna() & wur_subject.drop(columns='Subject').isna().all(axis=1)].index)
+
+
+wur_subject.shape
+
+wur_subject.to_csv("QS 2024 WUR by Subject.csv", index=False)
+
+@base <http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph/> .
+
+
+model.add(Values.iri(qs, data[3]), uRank, Values.literal(data[1]));
+                    model.add(Values.iri(qs, data[3]), arRank, Values.literal(data[11]));
+                    model.add(Values.iri(qs, data[3]), arScore, Values.literal(Float.parseFloat(data[10])));
+
+
+                    model.add(Values.iri(qs, data[3]), erRank, Values.literal(data[13]));
+                    model.add(Values.iri(qs, data[3]), erScore, Values.literal(Float.parseFloat(data[12])));
+
+                    model.add(Values.iri(qs, data[3]), cpfRank, Values.literal(data[17]));
+                    model.add(Values.iri(qs, data[3]), cpfScore, Values.literal(Float.parseFloat(data[16])));
+
+                    model.add(Values.iri(qs, data[3]), isRank, Values.literal(data[21]));
+                    model.add(Values.iri(qs, data[3]), isScore, Values.literal(Float.parseFloat(data[20])));
+
+                    model.add(Values.iri(qs, data[3]), ifRank, Values.literal(data[19]));
+                    model.add(Values.iri(qs, data[3]), ifScore, Values.literal(Float.parseFloat(data[18])));
+
+                    model.add(Values.iri(qs, data[3]), sRank, Values.literal(data[27]));
+                    model.add(Values.iri(qs, data[3]), sScore, !data[26].isEmpty() ? Values.literal(Float.parseFloat(data[26])) : Values.literal(Float.parseFloat("-1.0")));
+                    //model.add(Values.iri(qs, data[3]), sScore, Values.literal(Float.parseFloat(data[26])));
+
+                    model.add(Values.iri(qs, data[3]), irnRank, Values.literal(data[23]));
+                    model.add(Values.iri(qs, data[3]), irnScore, Values.literal(Float.parseFloat(data[22])));
+
+                    model.add(Values.iri(qs, data[3]), eoRank, Values.literal(data[25]));
+                    model.add(Values.iri(qs, data[3]), eoScore, Values.literal(Float.parseFloat(data[24])));
+
+                    model.add(Values.iri(qs, data[3]), fsRank, Values.literal(data[15]));
+                    model.add(Values.iri(qs, data[3]), fsScore, Values.literal(Float.parseFloat(data[14])));
+
+                    model.add(Values.iri(qs, data[3]), size, Values.literal(data[6]));
+                    model.add(Values.iri(qs, data[3]), focus, Values.literal(data[7]));
+                    model.add(Values.iri(qs, data[3]), status, Values.literal(data[9]));
+                    model.add(Values.iri(qs, data[3]), res, Values.literal(data[8]));
+
+
+/*
+        //System.exit(1);
+
+        // Note that instead of writing to the screen using `System.out` you could also provide
+        // a java.io.FileOutputStream or a java.io.FileWriter to save the model to a file
+        Writer output = new FileWriter("./src/main/resources/rdf_examples/example1.ttl");
+        Rio.write(model, output, RDFFormat.TURTLE);
+
+        //
+        System.out.println("Print the subjects, predicates and objects");
+        Model filter = model.filter(null, null, null);
+        for (Statement statement : filter) {
+            IRI subject = (IRI) statement.getSubject();
+            IRI predicate = statement.getPredicate();
+            // the property value could be an IRI, a BNode, a Literal, or an RDF-star Triple. In RDF4J, Value
+            // is the supertype of all possible kinds of RDF values.
+            Value object = statement.getObject();
+            System.out.println(subject);
+            System.out.println(predicate);
+            System.out.println(object);
+        }
+
+        System.out.println("-----------------------------------------------------------------------");
+
+        System.out.println("Print the predicates and objects of 'picasso' subjects");
+        filter = model.filter(picasso, null, null);
+        for (Statement statement : filter) {
+            System.out.println(statement);
+        }
+
+        System.out.println("-----------------------------------------------------------------------");
+
+
+        System.out.println("SPARQL query");
+        // We do a simple SPARQL SELECT-query that retrieves all resources of type `ex:Artist`,
+        // and their first names.
+        String queryString = "PREFIX ex: <http://example.org/> \n";
+        queryString += "PREFIX foaf: <" + FOAF.NAMESPACE + "> \n";
+        queryString += "SELECT ?s ?n \n";
+        queryString += "WHERE { \n";
+        queryString += "    ?s a ex:Artist; \n";
+        queryString += "       foaf:firstName ?n .";
+        queryString += "}";
+
+        System.out.println(queryString);
+
+        System.out.println("-----------------------------------------------------------------------");
+
+        // in memory repository
+        Repository repo = new SailRepository(new MemoryStore());
+        // adding the model
+
+        System.out.println("Print SPARQL query results");
+        // Open a connection to the database
+        try (RepositoryConnection conn = repo.getConnection()) {
+            // add the model
+            conn.add(model);
+            TupleQuery query = conn.prepareTupleQuery(queryString);
+
+            // A QueryResult is also an AutoCloseable resource, so make sure it gets closed when done.
+            try (TupleQueryResult result = query.evaluate()) {
+                // we just iterate over all solutions in the result...
+                for (BindingSet solution : result) {
+                    // ... and print out the value of the variable binding for ?s and ?n
+                    System.out.println("?s = " + solution.getValue("s"));
+                    System.out.println("?n = " + solution.getValue("n"));
+                }
+            }
+        } finally {
+            // before our program exits, make sure the database is properly shut down.
+            repo.shutDown();
+        }
+
+         */

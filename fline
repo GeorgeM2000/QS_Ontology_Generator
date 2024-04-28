@@ -1,0 +1,57 @@
+@prefix : <http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph#> .
+
+:Massachusetts_Institute_of_Technology_MIT_ a :University;
+  :arRank "4";
+  :arScore "100.0";
+  :cpfRank "4";
+  :cpfScore "100.0";
+  :eoRank "4";
+  :eoScore "100.0";
+  :erRank "2";
+  :erScore "100.0";
+  :focus "CO";
+  :fsRank "16";
+  :fsScore "100.0";
+  :ifRank "56";
+  :ifScore "100.0";
+  :irnRank "58";
+  :irnScore "94.3";
+  :isLocatedIn :United_States;
+  :isRank "128";
+  :isScore "88.2";
+  :res "VH";
+  :sRank "51";
+  :sScore "95.2";
+  :size "M";
+  :status "B";
+  :uRank "1" .
+
+:United_Kingdom a :Country .
+
+:United_States a :Country .
+
+:University_of_Cambridge a :University;
+  :arRank "3";
+  :arScore "100.0";
+  :cpfRank "68";
+  :cpfScore "92.3";
+  :eoRank "6";
+  :eoScore "100.0";
+  :erRank "4";
+  :erScore "100.0";
+  :focus "FC";
+  :fsRank "14";
+  :fsScore "100.0";
+  :ifRank "64";
+  :ifScore "100.0";
+  :irnRank "7";
+  :irnScore "99.9";
+  :isLocatedIn :United_Kingdom;
+  :isRank "85";
+  :isScore "95.8";
+  :res "VH";
+  :sRank "33=";
+  :sScore "97.3";
+  :size "L";
+  :status "A";
+  :uRank "2" .
