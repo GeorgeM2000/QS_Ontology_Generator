@@ -89,7 +89,7 @@ public class QS_Ontology_Generator {
 
         String line = "";
         int current_row = 0;
-        int ROW_LIMIT = 10;
+        int ROW_LIMIT = 2000;
 
         // We want to reuse this namespace when creating several building blocks
         String qs = "http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph#";
@@ -157,7 +157,7 @@ public class QS_Ontology_Generator {
                 String[] data = line.split(",");
 
                 if (current_row == ROW_LIMIT) { // Set a limit for testing purposes
-                    break;
+                    //break;
                 } else if (current_row != 0) { // Row 0 is the column names (Skip row 0)
 
                     // === Add objects ===
@@ -235,10 +235,7 @@ public class QS_Ontology_Generator {
                     model.add(Values.iri(qs, data[1] + "-" + data[4]), uniSubRank, Values.literal(data[0]));
                     model.add(Values.iri(qs, data[1] + "-" + data[4]), uniSubScore, !data[3].isEmpty() ? Values.literal(Float.parseFloat(data[3])) : Values.literal(Float.parseFloat("-1.0")));
 
-
-
                 }
-
                 current_row += 1;
             }
         } catch (IOException e) {
