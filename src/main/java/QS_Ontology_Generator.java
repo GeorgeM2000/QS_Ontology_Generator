@@ -111,7 +111,8 @@ public class QS_Ontology_Generator {
         IRI cityIsLocatedIn = Values.iri(qs,"cityIsLocatedIn");
         IRI sub = Values.iri(qs,"subject");
         IRI uni = Values.iri(qs,"university");
-
+        IRI hasUniversity = Values.iri(qs,"hasUniversity");
+        IRI hasCity = Values.iri(qs,"hasCity");
 
         // === Data Properties ===
 
@@ -157,7 +158,7 @@ public class QS_Ontology_Generator {
                 String[] data = line.split(",");
 
                 if (current_row == ROW_LIMIT) { // Set a limit for testing purposes
-                    //break;
+                    break;
                 } else if (current_row != 0) { // Row 0 is the column names (Skip row 0)
 
                     // === Add objects ===
@@ -168,9 +169,11 @@ public class QS_Ontology_Generator {
 
                     // Best Student Cities
                     //model.add(Values.iri(qs, data[1]), RDF.TYPE, city);
+                    //model.add(Values.iri(qs, data[2]), RDF.TYPE, country);
 
                     // WUR by Subject
                     model.add(Values.iri(qs, data[4]), RDF.TYPE, subject);
+                    model.add(Values.iri(qs, data[1]), RDF.TYPE, university);
                     model.add(Values.iri(qs, data[1] + "-" + data[4]), RDF.TYPE, uni_sub);
 
 
@@ -179,9 +182,11 @@ public class QS_Ontology_Generator {
 
                     // WUR
                     //model.add(Values.iri(qs, data[3]), isLocatedIn, Values.iri(qs, data[5]));
+                    //model.add(Values.iri(qs, data[5]), hasUniversity, Values.iri(qs, data[3]));
 
                     // Best Student Cities
                     //model.add(Values.iri(qs, data[1]), cityIsLocatedIn, Values.iri(qs, data[2]));
+                    //model.add(Values.iri(qs, data[2]), hasCity, Values.iri(qs, data[1]));
 
                     // WUR by Subject
                     model.add(Values.iri(qs, data[1] + "-" + data[4]), sub, Values.iri(qs, data[4]));
