@@ -158,7 +158,7 @@ public class QS_Ontology_Generator {
                 String[] data = line.split(",");
 
                 if (current_row == ROW_LIMIT) { // Set a limit for testing purposes
-                    break;
+                    //break;
                 } else if (current_row != 0) { // Row 0 is the column names (Skip row 0)
 
                     // === Add objects ===
