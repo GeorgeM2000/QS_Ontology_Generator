@@ -1,0 +1,27 @@
+select ?uni ?country where {
+	?uni a qs:University .
+	?uni qs:isLocatedIn ?country .
+	?uni qs:arScore ?arScore .
+	?uni qs:erScore ?erScore .
+	FILTER(?arScore > 90.0 && ?erScore > 90.0)
+}
+order by desc(?arScore) desc(?erScore)
+	
+	
+select ?sub ?uni where {
+    ?uni_sub a qs:Uni_Sub .
+    ?uni_sub qs:subject ?sub .
+    ?uni_sub qs:university ?uni .
+	?uni_sub qs:uniSubScore ?uniSubScore .
+    ?uni qs:arScore ?arScore .
+    FILTER(?uniSubScore > 90.0 && ?arScore < 50.0)
+} 
+
+select distinct ?city where {
+    ?city a qs:City .
+    ?uni a qs:University .
+    ?city qs:cityIsLocatedIn ?country .
+    ?country qs:hasUniversity ?uni .
+    ?uni qs:arScore ?arScore .
+    FILTER(?arScore > 90.0)
+} 

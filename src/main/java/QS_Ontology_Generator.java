@@ -229,8 +229,8 @@ public class QS_Ontology_Generator {
                     model.add(Values.iri(qs, data[3]), focus, Values.literal(data[7]));
                     model.add(Values.iri(qs, data[3]), status, Values.literal(data[9]));
                     model.add(Values.iri(qs, data[3]), res, Values.literal(data[8]));
+                    */
 
-                     */
 
                     // Best Student Cities
                     //model.add(Values.iri(qs, data[1]), cRank, Values.literal(data[0]));
