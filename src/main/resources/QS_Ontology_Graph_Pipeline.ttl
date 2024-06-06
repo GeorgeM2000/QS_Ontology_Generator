@@ -1,0 +1,339 @@
+@prefix : <http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph#> .
+@prefix qs: <http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph#> .
+
+<http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph> rdf:type owl:Ontology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph/arRank
+qs:arRank rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph/arScore
+qs:arScore rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph/cpfRank
+qs:cpfRank rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph/cpfScore
+qs:cpfScore rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph/eoRank
+qs:eoRank rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph/eoScore
+qs:eoScore rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph/erRank
+qs:erRank rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph/erScore
+qs:erScore rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph/focus
+qs:focus rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph/fsRank
+qs:fsRank rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph/fsScore
+qs:fsScore rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph/ifRank
+qs:ifRank rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph/ifScore
+qs:ifScore rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph/irnRank
+qs:irnRank rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph/irnScore
+qs:irnScore rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph/isLocatedIn
+qs:isLocatedIn rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph/isRank
+qs:isRank rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph/isScore
+qs:isScore rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph/res
+qs:res rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph/sRank
+qs:sRank rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph/sScore
+qs:sScore rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph/size
+qs:size rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph/status
+qs:status rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph/uRank
+qs:uRank rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph#cityIsLocatedIn
+:cityIsLocatedIn rdf:type owl:ObjectProperty ;
+                 rdfs:domain :City ;
+                 rdfs:range :Country .
+
+
+
+###  http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph#hasCity
+:hasCity rdf:type owl:ObjectProperty ;
+         owl:inverseOf :cityIsLocatedIn .
+
+
+###  http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph#hasUniversity
+:hasUniversity rdf:type owl:ObjectProperty ;
+               owl:inverseOf :isLocatedIn .
+
+
+###  http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph#isLocatedIn
+:isLocatedIn rdf:type owl:ObjectProperty ;
+             rdfs:domain :University ;
+             rdfs:range :Country .
+
+
+###  http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph#subject
+:subject rdf:type owl:ObjectProperty ;
+         rdfs:domain :Uni_Sub ;
+         rdfs:range :Subject .
+
+
+###  http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph#university
+:university rdf:type owl:ObjectProperty ;
+            rdfs:domain :Uni_Sub ;
+            rdfs:range :University .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph#arRank
+:arRank rdf:type owl:DatatypeProperty ;
+        rdfs:domain :University ;
+        rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph#arScore
+:arScore rdf:type owl:DatatypeProperty ;
+         rdfs:domain :University ;
+         rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph#cRank
+:cRank rdf:type owl:DatatypeProperty ;
+       rdfs:domain :City ;
+       rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph#cScore
+:cScore rdf:type owl:DatatypeProperty ;
+        rdfs:domain :City ;
+        rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph#cpfRank
+:cpfRank rdf:type owl:DatatypeProperty ;
+         rdfs:domain :University ;
+         rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph#cpfScore
+:cpfScore rdf:type owl:DatatypeProperty ;
+          rdfs:domain :University ;
+          rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph#eoRank
+:eoRank rdf:type owl:DatatypeProperty ;
+        rdfs:domain :University ;
+        rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph#eoScore
+:eoScore rdf:type owl:DatatypeProperty ;
+         rdfs:domain :University ;
+         rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph#erRank
+:erRank rdf:type owl:DatatypeProperty ;
+        rdfs:domain :University ;
+        rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph#erScore
+:erScore rdf:type owl:DatatypeProperty ;
+         rdfs:domain :University ;
+         rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph#focus
+:focus rdf:type owl:DatatypeProperty ;
+       rdfs:domain :University ;
+       rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph#fsRank
+:fsRank rdf:type owl:DatatypeProperty ;
+        rdfs:domain :University ;
+        rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph#fsScore
+:fsScore rdf:type owl:DatatypeProperty ;
+         rdfs:domain :University ;
+         rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph#ifRank
+:ifRank rdf:type owl:DatatypeProperty ;
+        rdfs:domain :University ;
+        rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph#ifScore
+:ifScore rdf:type owl:DatatypeProperty ;
+         rdfs:domain :University ;
+         rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph#irnRank
+:irnRank rdf:type owl:DatatypeProperty ;
+         rdfs:domain :University ;
+         rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph#irnScore
+:irnScore rdf:type owl:DatatypeProperty ;
+          rdfs:domain :University ;
+          rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph#isRank
+:isRank rdf:type owl:DatatypeProperty ;
+        rdfs:domain :University ;
+        rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph#isScore
+:isScore rdf:type owl:DatatypeProperty ;
+         rdfs:domain :University ;
+         rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph#res
+:res rdf:type owl:DatatypeProperty ;
+     rdfs:domain :University ;
+     rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph#sRank
+:sRank rdf:type owl:DatatypeProperty ;
+       rdfs:domain :University ;
+       rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph#sScore
+:sScore rdf:type owl:DatatypeProperty ;
+        rdfs:domain :University ;
+        rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph#size
+:size rdf:type owl:DatatypeProperty ;
+      rdfs:domain :University ;
+      rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph#status
+:status rdf:type owl:DatatypeProperty ;
+        rdfs:domain :University ;
+        rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph#uRank
+:uRank rdf:type owl:DatatypeProperty ;
+       rdfs:domain :University ;
+       rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph#uniSubRank
+:uniSubRank rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Uni_Sub ;
+            rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph#uniSubScore
+:uniSubScore rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Uni_Sub ;
+             rdfs:range xsd:float .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph#City
+:City rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph#Country
+:Country rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph#Subject
+:Subject rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph#Uni_Sub
+:Uni_Sub rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/georgematlis/ontologies/2024/3/QS_Ontology_Graph#University
+:University rdf:type owl:Class .
+
